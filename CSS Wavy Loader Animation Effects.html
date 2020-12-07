@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>CSS Wavy Loader Animation Effects</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+    </style>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background: #000;
+        }
+        .loader {
+            position: relative;
+            width: 250px;
+            height: 250px;
+            border-radius: 50%;
+            overflow: hidden;
+            transform: rotate(175deg);
+        }
+        .loader__item {
+            position: absolute;
+            top: calc(12px * var(--i));
+            left: calc(12px * var(--i));
+            right: calc(12px * var(--i));
+            bottom: calc(12px * var(--i));
+            border: 10px solid #0b0b0b;
+            border-top: 10px solid #0f0;
+            border-left: 10px solid #0f0;
+            border-radius: 50%;
+            animation: ways_move 1s alternate ease-in-out infinite;
+            filter: hue-rotate(calc(60deg * var(--i)));
+            animation-delay: calc(0.1s * var(--i));
+        }
+        @keyframes ways_move  {
+            0% {
+                 transform: rotate(0);
+            }
+            100% {
+                 transform: rotate(90deg);
+            }
+        }
+    </style>
+</head>
+<body>
+<div class="loader">
+    <span class="loader__item" style="--i:0;"></span>
+    <span class="loader__item" style="--i:1;"></span>
+    <span class="loader__item" style="--i:2;"></span>
+    <span class="loader__item" style="--i:3;"></span>
+    <span class="loader__item" style="--i:4;"></span>
+    <span class="loader__item" style="--i:5;"></span>
+    <span class="loader__item" style="--i:6;"></span>
+    <span class="loader__item" style="--i:7;"></span>
+    <span class="loader__item" style="--i:8;"></span>
+    <span class="loader__item" style="--i:9;"></span>
+</div>
+</body>
+</html>
